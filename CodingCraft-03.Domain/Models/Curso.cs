@@ -14,7 +14,6 @@ namespace CodingCraft_03.Domain.Models
         public string NomeCurso { get; set; }
         public string Descricao { get; set; }
         public DateTime DataCriacao { get; set; }
-        public decimal Preco { get; set; }
         public bool AcessoLivre { get; set; }
 
         public List<StatusCurso> StatusCursos { get; set; }
