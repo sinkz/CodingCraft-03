@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace CodingCraft_03.Models
+namespace CodingCraft_03.Domain.Models
 {
     public class IndexViewModel
     {
@@ -81,6 +81,6 @@ namespace CodingCraft_03.Models
     public class ConfigureTwoFactorViewModel
     {
         public string SelectedProvider { get; set; }
-        public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
+        //public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
     }
 }

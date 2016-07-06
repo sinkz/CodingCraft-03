@@ -6,7 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using CodingCraft_03.Models;
+
+using CodingCraft_03.Common.Infrastructure.Identity;
+using CodingCraft_03.Domain.Models;
 
 namespace CodingCraft_03.Controllers
 {

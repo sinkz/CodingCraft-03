@@ -8,7 +8,8 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using CodingCraft_03.Models;
+using CodingCraft_03.Domain.Models;
+using CodingCraft_03.Common.Infrastructure.Identity;
 
 namespace CodingCraft_03.Controllers
 {
@@ -284,7 +285,7 @@ namespace CodingCraft_03.Controllers
 
         //
         // GET: /Account/SendCode
-        [AllowAnonymous]
+       /* [AllowAnonymous]
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
@@ -295,7 +296,7 @@ namespace CodingCraft_03.Controllers
             var userFactors = await UserManager.GetValidTwoFactorProvidersAsync(userId);
             var factorOptions = userFactors.Select(purpose => new SelectListItem { Text = purpose, Value = purpose }).ToList();
             return View(new SendCodeViewModel { Providers = factorOptions, ReturnUrl = returnUrl, RememberMe = rememberMe });
-        }
+        }**/
 
         //
         // POST: /Account/SendCode

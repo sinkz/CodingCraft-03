@@ -3,9 +3,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
-using CodingCraft_03.Models;
+using CodingCraft_03.Domain.Models;
+using CodingCraft_03.Common.Infrastructure.Identity;
 
 namespace CodingCraft_03
 {
