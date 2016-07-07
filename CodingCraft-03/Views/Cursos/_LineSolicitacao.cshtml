@@ -1,9 +1,10 @@
-﻿@model CodingCraft_03.Domain.Models.Solicitacao
+﻿@model CodingCraft_03.Domain.Models.SolicitacaoCurso
 
 @using (Html.BeginCollectionItem("Solicitacoes"))
 {
     <div class="form-group">
-        @Html.HiddenFor(model => model.SolicitacaoId)
+        @Html.HiddenFor(model => model.SolicitacaoCursoId)
+
 
         <label class="col-md-1 control-label">Nome</label>
         <div class="col-md-5">

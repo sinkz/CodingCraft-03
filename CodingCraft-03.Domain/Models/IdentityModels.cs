@@ -35,6 +35,8 @@ namespace CodingCraft_03.Domain.Models
 
         public DbSet<Curso> Cursos { get; set; }
         public DbSet<Solicitacao> Solicitacoes { get; set; }
+        public DbSet<SolicitacaoCurso> SolicitacoesCurso { get; set; }
+        public DbSet<StatusCurso> StatusCurso { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -21,6 +21,7 @@ namespace CodingCraft_03.Common.Controllers
             return View(await db.Solicitacoes.ToListAsync());
         }
 
+
         // GET: Solicitacoes/Details/5
         public async Task<ActionResult> Details(Guid? id)
         {

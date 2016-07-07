@@ -25,7 +25,18 @@ namespace CodingCraft_03.Common.Controllers
         public ActionResult NewLineSolicitacoes(Guid? SolicitacaoId = null)
         {
             ViewBag.Solicitacoes = new SelectList(db.Solicitacoes, "SolicitacaoId", "Titulo");
-            return PartialView("_LineSolicitacao", new Solicitacao { SolicitacaoId = Guid.NewGuid() });
+            return PartialView("_LineSolicitacao", new SolicitacaoCurso { SolicitacaoCursoId = Guid.NewGuid() });
+        }
+
+        // GET: Cursos/Create
+        public ActionResult ChangeStatus(Guid? id)
+        {
+            Console.WriteLine(id);
+            return View(new Curso
+            {
+                Solicitacoes = new List<SolicitacaoCurso>()
+            });
+
         }
 
         // GET: Cursos/Details/5
@@ -40,6 +51,33 @@ namespace CodingCraft_03.Common.Controllers
             {
                 return HttpNotFound();
             }
+            return View(curso);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Details([Bind(Include = "CursoId,NomeCurso,Descricao,DataCriacao,AcessoLivre")] Curso curso)
+        {
+            if (ModelState.IsValid)
+            {
+                using (var scope = new TransactionScope(TransactionScopeAsyncFlowOption.Enabled))
+                {
+                    StatusCurso statusCurso = new StatusCurso();
+                    statusCurso.StatusCursoId = Guid.NewGuid();
+                    statusCurso.Status = "Enviar Para Revisão";
+                    statusCurso.CursoId = curso.CursoId;
+                    statusCurso.Data = DateTime.Now;
+                    
+                    db.StatusCurso.Add(statusCurso);
+                    await db.SaveChangesAsync();
+                    scope.Complete();
+                    return RedirectToAction("Index");
+                   
+                    
+                }
+
+            }
+
             return View(curso);
         }
 
