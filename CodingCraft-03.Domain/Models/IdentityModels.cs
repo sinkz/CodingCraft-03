@@ -33,6 +33,9 @@ namespace CodingCraft_03.Domain.Models
             Database.SetInitializer<ApplicationDbContext>(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
         }
 
+        public DbSet<Curso> Cursos { get; set; }
+        public DbSet<Solicitacao> Solicitacoes { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

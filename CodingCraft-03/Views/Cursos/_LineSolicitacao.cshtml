@@ -1,0 +1,17 @@
+﻿@model CodingCraft_03.Domain.Models.Solicitacao
+
+@using (Html.BeginCollectionItem("Solicitacoes"))
+{
+    <div class="form-group">
+        @Html.HiddenFor(model => model.SolicitacaoId)
+
+        <label class="col-md-1 control-label">Nome</label>
+        <div class="col-md-5">
+            @Html.DropDownListFor(x => x.SolicitacaoId, (SelectList)ViewBag.Solicitacoes, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SolicitacaoId, "", new { @class = "text-danger" })
+        </div>
+        <div class="col-md-2">
+            <a class="btn red" onclick="$(this).parent().parent().remove();">Excluir</a>
+        </div>
+    </div>
+}

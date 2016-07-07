@@ -10,9 +10,11 @@ namespace CodingCraft_03.Domain.Models
     public class Solicitacao
     {
         [Key]
-        public Guid SolicitacaoID { get; set; }
-        public DateTime DataCriacao { get; set; }
+        public Guid SolicitacaoId { get; set; }
+        public DateTime? DataCriacao { get; set; }
+      
+        public string Id { get; set; }
         public virtual ApplicationUser Usuario { get; set; }
-        public virtual ICollection<SolicitacaoCurso> SolicitacaoCursos { get; set; }
+        public virtual ICollection<SolicitacaoCurso> SolicitacaoCurso { get; set; }
     }
 }

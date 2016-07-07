@@ -13,10 +13,11 @@ namespace CodingCraft_03.Domain.Models
         public Guid CursoId { get; set; }
         public string NomeCurso { get; set; }
         public string Descricao { get; set; }
-        public DateTime DataCriacao { get; set; }
+        public DateTime? DataCriacao { get; set; }
         public bool AcessoLivre { get; set; }
 
-        public List<StatusCurso> StatusCursos { get; set; }
+        public virtual ICollection<SolicitacaoCurso> Solicitacoes { get; set; }
+        public virtual ICollection<StatusCurso> StatusCursos { get; set; }
 
     }
 }

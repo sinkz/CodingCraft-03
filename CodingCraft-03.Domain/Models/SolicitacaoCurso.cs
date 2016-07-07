@@ -13,8 +13,8 @@ namespace CodingCraft_03.Domain.Models
         public Guid SolicitacaoCursoID { get; set; }
         public Guid CursoId { get; set; }
         public Guid SolicitacaoId { get; set; }
-        public string descricao { get; set; }
-
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
         public virtual Curso Curso { get; set; }
         public virtual Solicitacao Solicitacao { get; set; }
     }

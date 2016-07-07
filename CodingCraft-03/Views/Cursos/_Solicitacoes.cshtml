@@ -1,0 +1,25 @@
+﻿@model IEnumerable<CodingCraft_03.Domain.Models.Solicitacao>
+
+<div class="actions">
+    <a class="btn btn-default btn-sm" id="adicionar-nova-solicitacao">
+        Vincular Solicitação
+    </a>
+    <script type="text/javascript">
+        $("#adicionar-nova-solicitacao").click(function () {
+            $.get('/Cursos/NewLineSolicitacoes', function (template) {
+                $("#area-solicitacao").append(template);
+            });
+        });
+    </script>
+</div>
+
+<div id="area-solicitacao">
+    @if (Model != null)
+    {
+        foreach (var solicitacao in Model)
+        {
+            @Html.Partial("_LineSolicitacao", solicitacao);
+        }
+    }
+</div>
+
